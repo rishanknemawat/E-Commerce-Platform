@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+
+<form id="sign-up-page" action="/signup" method="POST">
+    <div class="display-1 mx-auto text-center m-4">SignUp</div>
+    <div class="mt-4 mx-auto text-center my-2 w-25">
+        <p><input class="form-control mx-auto text-center" type="text" name="username" placeholder="Username" required /></p>
+        <p><input class="form-control mx-auto text-center" type="password" name="password" placeholder="Password" required /></p>
+        <p><button class="btn btn-outline-dark" type="submit">Sign Up</button></p>
+    </div>
+</form>
+<form action="/login">
+    <p class="mt-2 mx-auto text-center my-2"><button type="submit" class="btn btn-outline-dark">Already a User? Login</button></p>
+</form>
+
+<%- include('partials/footer') %>

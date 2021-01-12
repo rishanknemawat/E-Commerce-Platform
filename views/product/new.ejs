@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+<div class="display-1 mx-auto text-center my-2 mt-4">Add New Product</div>
+<form action="/products" method="POST">
+<div class="mt-4 mx-auto text-center my-2 w-25">
+    <p><input class="form-control mx-auto text-center" type="text" name="product[name]" placeholder="Product" required /></p>
+    <p><input class="form-control mx-auto text-center" type="number" name="product[price]" placeholder="Price" required /></p>
+    <p><input class="form-control mx-auto text-center" type="text" name="product[image]" placeholder="Image" required /></p>
+    <p><input class="form-control mx-auto text-center" type="text" name="product[category]" placeholder="Category" required /></p>
+    <p class="mt-2 mx-auto text-center my-2"><button type="submit" class="btn btn-outline-dark">Add Product</button></p>
+</div>
+</form>
+
+<%- include('../partials/footer') %>

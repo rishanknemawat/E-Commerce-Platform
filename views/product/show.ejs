@@ -1,0 +1,47 @@
+<%- include('../partials/header') %>
+
+<div class="text-center mt-4 mx-auto w-50 shadow">
+    <div class="mx-auto text-center m-1">
+        <% if(error && error.length > 0) { %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+                <a class="alert-link" href="/login">Login</a>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0) { %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+    </div>
+
+    <div class="text-center mx-auto my-4">
+        <img src="<%= product.image %>" class="img-thumbnail shadow mt-2">
+        <div class="mx-auto text-center my-1">
+            <p class="text-capitalize font-weight-normal font-italic m-1"><%= product.name %></p>
+            <p class="text-capitalize font-weight-light font-italic m-1 mb-2">Rs. <%= product.price.toLocaleString(); %></p>
+        </div>
+
+        <div class="border border-light mx-auto text-center mt-4">
+            <p class="font-weight-normal font-italic">Reviews</p>
+                <div class="mx-auto text-center mt-1">
+                    <% product.reviews.forEach(function(review){ %>
+
+                    <div class="font-weight-normal font-italic text-capitalize m-2">
+                        <%= review.author.username %>- <span class="font-weight-light font-italic text-capitalize"><%= review.text %></span>
+                        <% if(currentUser && currentUser._id.equals(review.author.id)) { %>
+                            <form action="/products/<%= product._id %>/reviews/<%= review._id %>/?_method=DELETE" method="POST">
+                                <button class="submit btn btn-outline-danger btn-sm">Delete</button>
+                                <a class="btn btn-outline-warning btn-sm" href="/products/<%= product._id %>/reviews/<%= review._id %>/edit">Edit</a>
+                            </form>
+                        <% } %>
+                        </div>
+                    <% }) %>
+                </div>
+                <div class="text-center mx-auto m-2">                   
+                    <a href='/products/<%= product._id %>/reviews/new' class="btn btn-outline-dark">Add new review</a>
+                </div>
+        </div>
+    </div>
+</div>
+<%- include('../partials/footer') %>

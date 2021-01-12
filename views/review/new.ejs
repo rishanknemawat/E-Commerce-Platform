@@ -1,0 +1,9 @@
+<%- include('../partials/header') %>
+<div class="display-1 mx-auto text-center my-2 mt-4">Add Review</div>
+<form action="/products/<%= product._id %>/reviews" method="POST">
+    <div class="mt-4 mx-auto text-center my-2 w-25">
+        <input class="form-control mx-auto text-center" type="text" name="review[text]" placeholder="Enter review" required>
+    </div>
+    <p class="mt-2 mx-auto text-center my-2"><button type="submit" class="btn btn-outline-dark">Add Review</button></p>
+</form>
+<%- include('../partials/footer') %>

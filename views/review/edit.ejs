@@ -1,0 +1,8 @@
+<%- include('../partials/header') %>
+
+<form action="/products/<%= product_id %>/reviews/<%= review._id %>/?_method=PUT" method="POST">
+    <p><input class="form-control mx-auto text-center" type="text" name="review[text]" value="<%= review.text %>" required /></p>
+    <p class="mt-2 mx-auto text-center my-2"><button type="submit" class="btn btn-outline-dark">Edit Review</button></p>
+</form>
+
+<%- include('../partials/footer') %>

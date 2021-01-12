@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+
+<div class="display-1 mx-auto text-center m-4">Login</div>
+<form id="login-form" action="/login" method="POST">
+    <div class="mt-4 mx-auto text-center my-2 w-25">
+        <p><input type="text" name="username" class="form-control mx-auto text-center" placeholder="Enter username" required></p>
+        <p><input type="password" name="password" class="form-control mx-auto text-center" placeholder="Enter password" required></p>
+        <p><button type="submit" class="btn btn-outline-dark ">Login</button></p>
+    </div>
+</form>
+<form action="/signup">
+    <p class="mt-2 mx-auto text-center my-2"><button type="submit" class="btn btn-outline-dark">New User? SignUp</button></p>
+</form>
+        
+
+<%- include('partials/footer') %>
